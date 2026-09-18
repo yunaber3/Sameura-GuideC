@@ -6,7 +6,19 @@ const PAGES = [
   { p: "", label: "トップ / Top" },
   { p: "arrival", label: "到着・チェックイン / Arrival" },
   { p: "stay", label: "滞在中のご案内 / Your Stay" },
+  { p: "stay/amenities", label: "アメニティ / Amenities" },
+  { p: "stay/wifi", label: "Wi-Fi" },
   { p: "stay/toilet", label: "トイレ / Toilet" },
+  { p: "stay/bath", label: "お風呂 / Bath" },
+  { p: "stay/kitchen", label: "キッチン・お米 / Kitchen" },
+  { p: "stay/bbq", label: "BBQ" },
+  { p: "stay/waste", label: "ゴミ / Waste" },
+  { p: "stay/announcement", label: "町内放送 / Announcement" },
+  { p: "stay/longstay", label: "長期滞在 / Long Stay" },
+  { p: "stay/mail", label: "郵便物 / Mail" },
+  { p: "rules", label: "宿泊ルール / House Rules" },
+  { p: "checkout", label: "チェックアウト / Check-out" },
+  { p: "other", label: "ペット同伴 / Pet Guests" },
 ];
 
 export default async function AdminDashboardPage({ params }) {
@@ -65,7 +77,7 @@ export default async function AdminDashboardPage({ params }) {
         </details>
 
         <p className="dash-adv" style={{ color: "var(--ink-muted)" }}>
-          現在は上記4ページのみ実装済みです。残りのページも同じパターンで追加していきます。
+          「さめうらを楽しむ」「周辺案内」の2ページは近日追加予定です。
         </p>
       </div>
     </div>

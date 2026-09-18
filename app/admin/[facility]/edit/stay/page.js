@@ -3,7 +3,18 @@ import { getProperty, getContentStatus } from "@/lib/content";
 import { normalizeLang } from "@/lib/t";
 import EditBar from "@/components/EditBar";
 
-const ITEMS = [{ k: "toilet", ja: "トイレ", en: "Toilet", built: true }];
+const ITEMS = [
+  { k: "amenities", ja: "アメニティ", en: "Amenities" },
+  { k: "wifi", ja: "Wi-Fi", en: "Wi-Fi" },
+  { k: "toilet", ja: "トイレ", en: "Toilet" },
+  { k: "bath", ja: "お風呂", en: "Bath" },
+  { k: "kitchen", ja: "キッチン・お米", en: "Kitchen & Rice" },
+  { k: "bbq", ja: "BBQ", en: "BBQ" },
+  { k: "waste", ja: "ゴミ", en: "Waste" },
+  { k: "announcement", ja: "町内放送", en: "Town Announcement" },
+  { k: "longstay", ja: "長期滞在のお客様", en: "Long Stay" },
+  { k: "mail", ja: "郵便物・宅配", en: "Mail & Delivery" },
+];
 
 export default async function EditStayMenuPage({ params, searchParams }) {
   const facilityId = params.facility;
@@ -39,8 +50,8 @@ export default async function EditStayMenuPage({ params, searchParams }) {
       </ul>
       <p style={{ padding: "0 20px", fontSize: 12.5, color: "var(--ink-muted)" }}>
         {lang === "ja"
-          ? "他の滞在案内ページ(Wi-Fi・お風呂・キッチンなど)は今後追加予定です。"
-          : "Other stay pages (Wi-Fi, bath, kitchen, etc.) are coming soon."}
+          ? "各ページを開いて、文章をタップすると編集できます。"
+          : "Open each page and tap the text to edit it."}
       </p>
     </div>
   );

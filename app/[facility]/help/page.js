@@ -74,6 +74,12 @@ export default async function HelpPage({ params, searchParams }) {
             </p>
           )}
         </div>
+        <a
+          href={`/${facilityId}/other?lang=${lang}`}
+          style={{ display: "block", marginTop: 24, fontSize: 12.5, color: "var(--ink-muted)" }}
+        >
+          {lang === "ja" ? "ペット同伴のお客様について →" : "For guests with pets →"}
+        </a>
       </div>
     </div>
   );

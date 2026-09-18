@@ -7,12 +7,12 @@ import EditablePhoto from "@/components/EditablePhoto";
 import Icon from "@/components/Icon";
 
 const NAV_CARDS = [
-  { key: "arrival", ja: "到着・チェックイン", en: "Arrival & Check-in", ic: "car" },
-  { key: "stay", ja: "滞在中のご案内", en: "Your Stay", ic: "home" },
-  { key: "experience", ja: "さめうらを楽しむ", en: "Experience Sameura", ic: "leaf" },
-  { key: "local", ja: "周辺案内", en: "Local Guide", ic: "mappin" },
-  { key: "rules", ja: "宿泊ルール", en: "House Rules", ic: "clipboard" },
-  { key: "checkout", ja: "チェックアウト", en: "Check-out", ic: "key" },
+  { key: "arrival", ja: "到着・チェックイン", en: "Arrival & Check-in", ic: "car", built: true },
+  { key: "stay", ja: "滞在中のご案内", en: "Your Stay", ic: "home", built: true },
+  { key: "experience", ja: "さめうらを楽しむ", en: "Experience Sameura", ic: "leaf", built: false },
+  { key: "local", ja: "周辺案内", en: "Local Guide", ic: "mappin", built: false },
+  { key: "rules", ja: "宿泊ルール", en: "House Rules", ic: "clipboard", built: true },
+  { key: "checkout", ja: "チェックアウト", en: "Check-out", ic: "key", built: true },
 ];
 
 export default async function EditTopPage({ params, searchParams }) {
@@ -63,22 +63,34 @@ export default async function EditTopPage({ params, searchParams }) {
       </div>
 
       <div className="navgrid">
-        {NAV_CARDS.map((c) => (
-          <div key={c.key} className="navcard" style={{ cursor: "default" }}>
-            <span className="tile-ic">
-              <Icon name={c.ic} />
-            </span>
-            <span>
-              <span className="jp">{lang === "ja" ? c.ja : c.en}</span>
-              <span className="en">{c.en}</span>
-            </span>
-          </div>
-        ))}
+        {NAV_CARDS.map((c) =>
+          c.built ? (
+            <a key={c.key} className="navcard" href={`/admin/${facilityId}/edit/${c.key}?lang=${lang}`}>
+              <span className="tile-ic">
+                <Icon name={c.ic} />
+              </span>
+              <span>
+                <span className="jp">{lang === "ja" ? c.ja : c.en}</span>
+                <span className="en">{c.en}</span>
+              </span>
+            </a>
+          ) : (
+            <div key={c.key} className="navcard" style={{ cursor: "default", opacity: 0.45 }}>
+              <span className="tile-ic">
+                <Icon name={c.ic} />
+              </span>
+              <span>
+                <span className="jp">{lang === "ja" ? c.ja : c.en}</span>
+                <span className="en">{lang === "ja" ? "準備中" : "Coming soon"}</span>
+              </span>
+            </div>
+          )
+        )}
       </div>
       <p style={{ textAlign: "center", fontSize: 12, color: "var(--ink-muted)", margin: "4px 20px 20px" }}>
         {lang === "ja"
-          ? "※ メニューカードの項目名は現時点では固定です(文言編集は今後追加予定)。"
-          : "Menu card labels are fixed for now (text editing coming soon)."}
+          ? "※ カードをタップすると、そのページの編集画面に移動します(準備中のページは今後追加予定)。"
+          : "Tap a card to edit that page (pages marked \"coming soon\" will be added later)."}
       </p>
     </div>
   );

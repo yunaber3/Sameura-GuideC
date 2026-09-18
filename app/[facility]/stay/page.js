@@ -8,16 +8,16 @@ import EditPageFab from "@/components/EditPageFab";
 // "built: true" のものだけ実際のページが用意されています。
 // それ以外は同じ画面構造の中に順番に追加していく予定の項目です。
 const ITEMS = [
-  { k: "amenities", ja: "アメニティ", en: "Amenities", built: false },
-  { k: "wifi", ja: "Wi-Fi", en: "Wi-Fi", built: false },
+  { k: "amenities", ja: "アメニティ", en: "Amenities", built: true },
+  { k: "wifi", ja: "Wi-Fi", en: "Wi-Fi", built: true },
   { k: "toilet", ja: "トイレ", en: "Toilet", built: true },
-  { k: "bath", ja: "お風呂", en: "Bath", built: false },
-  { k: "kitchen", ja: "キッチン・お米", en: "Kitchen & Rice", built: false },
-  { k: "bbq", ja: "BBQ", en: "BBQ", built: false },
-  { k: "waste", ja: "ゴミ", en: "Waste", built: false },
-  { k: "announcement", ja: "町内放送", en: "Town Announcement", built: false },
-  { k: "longstay", ja: "長期滞在のお客様", en: "Long Stay", built: false },
-  { k: "mail", ja: "郵便物・宅配", en: "Mail & Delivery", built: false },
+  { k: "bath", ja: "お風呂", en: "Bath", built: true },
+  { k: "kitchen", ja: "キッチン・お米", en: "Kitchen & Rice", built: true },
+  { k: "bbq", ja: "BBQ", en: "BBQ", built: true },
+  { k: "waste", ja: "ゴミ", en: "Waste", built: true },
+  { k: "announcement", ja: "町内放送", en: "Town Announcement", built: true },
+  { k: "longstay", ja: "長期滞在のお客様", en: "Long Stay", built: true },
+  { k: "mail", ja: "郵便物・宅配", en: "Mail & Delivery", built: true },
 ];
 
 export default async function StayMenuPage({ params, searchParams }) {
