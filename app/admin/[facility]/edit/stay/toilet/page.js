@@ -70,14 +70,14 @@ export default async function EditToiletPage({ params, searchParams }) {
               initialValue={t(p.noticeTitle, lang)}
             />
           </p>
-          <p className="nt-body">
+          <div className="nt-body">
             <EditableText
               facilityId={facilityId}
               path={`pages.toilet.noticeBody.${lang}`}
               initialValue={t(p.noticeBody, lang)}
               multiline
             />
-          </p>
+          </div>
         </div>
       </div>
     </div>
