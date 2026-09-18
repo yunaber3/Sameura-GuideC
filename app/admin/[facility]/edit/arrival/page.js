@@ -69,7 +69,7 @@ export default async function EditArrivalPage({ params, searchParams }) {
           Google Maps URL:{" "}
           <EditableText facilityId={facilityId} path="pages.arrival.mapUrl" initialValue={p.mapUrl} />
         </p>
-        <p className="lede">
+        <div className="lede">
           <EditableText
             facilityId={facilityId}
             path={`pages.arrival.carNote.${lang}`}
@@ -77,7 +77,7 @@ export default async function EditArrivalPage({ params, searchParams }) {
             multiline
             placeholder={lang === "ja" ? "車でのアクセス案内(空欄でも構いません)" : "Driving directions (optional)"}
           />
-        </p>
+        </div>
 
         <div className="card" style={{ padding: "4px 18px" }}>
           <p style={{ padding: "12px 0 0", fontWeight: 600, fontSize: 13 }}>
