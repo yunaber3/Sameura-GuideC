@@ -51,7 +51,7 @@ export default async function EditTopPage({ params, searchParams }) {
         <div className="eyebrow">Guest Guide</div>
         <h1>{prop.name_ja}</h1>
         <div className="en-name">{prop.name_en}</div>
-        <p className="lede">
+        <div className="lede">
           <EditableText
             facilityId={facilityId}
             path={`pages.top.intro.${lang}`}
@@ -59,7 +59,7 @@ export default async function EditTopPage({ params, searchParams }) {
             multiline
             placeholder={lang === "ja" ? "トップページの案内文" : "Top page intro text"}
           />
-        </p>
+        </div>
       </div>
 
       <div className="navgrid">
